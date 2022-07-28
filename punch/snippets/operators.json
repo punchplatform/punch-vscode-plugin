@@ -1,0 +1,129 @@
+{
+    "CEF": {
+		"prefix": "cef().on().into()",
+		"body": [
+			 "cef().on(${1:String input}).into(${2:Tuple tuple});\n"
+		],
+		"description": [
+			"The cef operator transform a valid CEF string into a punchlang tuple\n",
+			"https://punch-1.gitbook.io/punch-doc/punchlang/api/cef"
+		]
+	},
+
+	"cidrmatch": {
+		"prefix": "cidrmatch().on().",
+		"body": [
+			 "cidrmatch(${1:String input}).on(${2:String input}).${3|check,into|}(${4});\n"
+		],
+		"description": [
+			"The cidrMatch operator lets you check that an IP address (dotted number notation) matches a subnet.",
+			"In its simplest form you can use it to only perform a check."
+		]
+	},
+
+	"cidrfirstmatch": {
+		"prefix": "cidrmatch().on().firstMatch()",
+		"body": [
+			 "cidrmatch(${1:String input}).on(${2:String input}).firstMatch().${3|check,into|}(${4});\n"
+		],
+		"description": [
+			"The cidrMatch operator lets you check that an IP address (dotted number notation) first matche a subnet.",
+			"In its simplest form you can use it to only perform a check."
+		]
+	},
+
+	"cidrRange": {
+		"prefix": "cidrRange()",
+		"body": [
+			 "cidrRange(${1:String input}).columns(${2:String input}).cidrField(${3:String input});\n"
+		],
+		"description": [
+			"Using the cidrRange, you can perform efficient lookup to check if an IP address belongs to an IP range.",
+			"The CidrRangeOperator is an efficient and more powerful implementation of the CidrMatchOperator"
+		]
+	},
+
+	"Csv": {
+		"prefix": "csv().on().into()",
+		"body": [
+			 "csv(${1:String input}).on(${2:String input}).into(${3:Tuple tuple});\n"
+		],
+		"description": [
+			"The csv operator transforms CSV strings into key value maps stored into Tuples.  Here is a simple example of handling a  \"1;2;3\" string: ", 
+			"https://punch-1.gitbook.io/punch-doc/punchlang/api/csv"
+		]
+	},
+
+	"findByKey": {
+		"prefix": "findByKey(,).on().into()",
+		"body": [
+			 "findByKey($1,$2).on($3).into($4);\n"
+		],
+		"description": "findByKey function"
+	},
+
+	"Grok2":{
+		"prefix": "grok2(String input).on()",
+		"body": [
+			"grok2(${1:String input}).on(${2:Tuple tuple});\n"
+	   ],
+	   "description": "The grok method requires grok patterns. The punch provides standard patterns, and you can provide your own. To use the standard grok."
+	},
+
+	"GrokBreakMatch":{
+		"prefix": "grok2(String input).breakOnMatch(false).on()",
+		"body": [
+			"grok2(${1:String input}).breakOnMatch(false).on(${2:Tuple tuple});\n"
+	   ],
+	   "description": "The grok method requires grok patterns. The punch provides standard patterns, and you can provide your own. To use the standard grok."
+	},
+	
+	"raise(String)": {
+		"prefix": "raise(String input)",
+		"body": [
+			 "raise(${1:String input});\n"
+		],
+		"description": "Throws a PunchRuntimeException with the provided informational message"
+	},
+
+	"raise(String, Object...)": {
+		"prefix": "raise(String input, Object ...)",
+		"body": [
+			 "raise(${1:String input},${2:Object});\n"
+		],
+		"description": "This variant accept a printlf like format string, followed by the corresponding objects you want to pring"
+	},
+
+	"print": {
+		"prefix": "print()",
+		"body": [
+			 "print(${1:Object elemnt});\n"
+		],
+		"description": "print function"
+	},
+
+	"KvOn": {
+		"prefix": "kv().on().into()",
+		"body": [
+			 "kv().on(${1:Object element}).into(${2:Tuple tuple});\n"
+		],
+		"description": ""
+	},
+
+	"Kvleft": {
+		"prefix": "kv().left().on().into()",
+		"body": [
+			 "kv().left().on(${1:Object element}).into(${2:Tuple tuple});\n"
+		],
+		"description": ""
+	},
+
+	"KvReplace": {
+		"prefix": "kv().replace().on().into()",
+		"body": [
+			 "kv().${1|replaceAllKeys,replaceAllValues,replaceAllKeyValues|}(${3:String input}, ${4:String input}).on(${5:Object element}).into(${6:Tuple tuple});\n"
+		],
+		"description": ""
+	}
+
+}
