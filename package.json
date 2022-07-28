@@ -8,6 +8,9 @@
 		"vscode": "^1.69.0"
 	},
 	"categories": [
+		"Language Packs",
+		"Formatters",
+		"Linters",
 		"Other"
 	],
 	"activationEvents": [
@@ -27,7 +30,11 @@
 				"extensions": [
 					".punch"
 				],
-				"configuration": "./language-configuration.json"
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "./images/icon.png",
+					"dark": "./images/icon.png"
+				}
 			}
 		],
 		"grammars": [
