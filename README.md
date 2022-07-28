@@ -13,7 +13,9 @@ Provide punchlang code assistance to visual code editor.
    npm run vscode:prepublish
    ```
 
-2.  Extension is activated when you first access a Punch file
+2.  You may to reopen your VSCode
+
+3. Extension is activated when you first access a Punch file
 
 
 
