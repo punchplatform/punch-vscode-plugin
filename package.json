@@ -15,6 +15,7 @@
 	],
 	"activationEvents": [
 		"onCommand:punch.Punchlet",
+		"onCommand:punch.Puncher",
 		"onLanguage:punch"
 	],
 	"main": "./dist/extension.js",
@@ -66,6 +67,10 @@
 			{
 				"command": "punch.Punchlet",
 				"title": "Create New Punchlet"
+			},
+			{
+				"command": "punch.Puncher",
+				"title": "Run Puncher"
 			}
 		],
 		"configuration": {
