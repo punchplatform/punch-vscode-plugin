@@ -33,11 +33,15 @@ class Formatter:
         if re.match(self.line_comment, line):
             return (0, self.indent() + line.strip())
 
-        
+        string_in_line = [m for m in re.findall(r'\"|\'',line)]
+
+        if len(string_in_line) > 0 :
+            return (0, self.indent() + line.strip())
         
         semicolon = [m for m in re.finditer(";",line)]
         open_parenthesis = [m for m in re.finditer("{",line)]
         close_parenthesis = [m for m in re.finditer("}",line)]
+
 
         if len(open_parenthesis) > 0 :
             result = self.indent() + line[0:open_parenthesis[0].span()[1]]
@@ -121,10 +125,6 @@ def main():
             key, value = arg.split('=')
             if any(char.isdigit() for char in value):
                 value = int(value)
-            elif value.lower() == 'true':
-                value = True
-            elif value.lower() == 'false':
-                value = False
             options[key.strip()] = value
 
         indent = options['--indentWidth']
@@ -135,7 +135,7 @@ def main():
         formatter.formatFile(sys.argv[1], start, end)
 
 # Error if { ; on same line 
-# Error if "{}" -> they should no be considered 
+# Line with " or ' are not format
 
 
 if __name__ == '__main__':
