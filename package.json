@@ -10,8 +10,8 @@
 	"categories": [
 		"Language Packs",
 		"Formatters",
-		"Linters",
-		"Other"
+		"Snippets",
+		"Linters"
 	],
 	"activationEvents": [
 		"onCommand:punch.Punchlet",
