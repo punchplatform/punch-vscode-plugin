@@ -6,9 +6,16 @@ import {PunchDocumentRangeFormatter, MODE} from './formatter';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	const formatter = new PunchDocumentRangeFormatter();
+
 	context.subscriptions.push(vscode.commands.registerCommand('punch.Punchlet', () => {
-				
+		vscode.workspace.openTextDocument({
+			content: "// \n{\n\n}",
+			language: "punch",
+		}).then(newDocument => {
+			vscode.window.showTextDocument(newDocument);
 		})
+	})
+		
 	);
 
 	context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider(MODE, formatter));

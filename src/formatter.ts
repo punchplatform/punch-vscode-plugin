@@ -14,7 +14,6 @@ class PunchFormatter {
     public w : any
     constructor() {
         this.machine_os = os.platform();
-        console.log(this.machine_os);
         this.py = vscode.workspace.getConfiguration('punch-formatter')['pythonPath'];
         if (this.py == '' && this.machine_os == 'win32') {
             this.py = 'python ';
