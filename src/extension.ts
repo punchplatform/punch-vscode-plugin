@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.commands.registerCommand('punch.Puncher', () => {
 			runPuncher(vscode.window.activeTextEditor?.document.fileName)
 		})
-	)
+	);
 
 	context.subscriptions.push(vscode.languages.registerDocumentFormattingEditProvider(MODE, formatter));
 }

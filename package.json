@@ -80,7 +80,7 @@
 			}
 		],
 		"configuration": {
-			"title": "punch-formatter configuration",
+			"title": "punch configuration",
 			"type": "object",
 			"properties": {
 				"punch-formatter.indentwidth": {
@@ -97,6 +97,11 @@
 					"type": "string",
 					"default": "",
 					"description": "optional custom path to punch formatter (requires restarting vscode)"
+				},
+				"punch-puncher.puncherTag": {
+					"type": "string",
+					"default": "8.0-dev",
+					"description": "tag of puncher docker images"
 				}
 			}
 		}

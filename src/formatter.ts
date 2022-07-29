@@ -4,14 +4,14 @@ import * as vscode from "vscode";
 import * as cp from "child_process";
 import * as stream from 'stream';
 import * as os from "os";
-var channel = 'punch-formatter';
+
 export const MODE = { language: 'punch' };
 
 class PunchFormatter {
     public machine_os: any;
     public py : any; 
     public formatter: any; 
-    public w : any
+    public stdin : any
     constructor() {
         this.machine_os = os.platform();
         this.py = vscode.workspace.getConfiguration('punch-formatter')['pythonPath'];
@@ -34,7 +34,7 @@ class PunchFormatter {
     }
 
     format(document: vscode.TextDocument, range : vscode.Range) {
-        this.w=null
+        this.stdin = null
         return new Promise((resolve, reject) => {
 
             let indentwidth = " --indentWidth=" + vscode.workspace.getConfiguration('punch-formatter')['indentwidth'];
@@ -50,15 +50,15 @@ class PunchFormatter {
                     }
                     return resolve(edit);
                 }
-                vscode.window.showErrorMessage('formatting failed:\n'+stderr);
+                vscode.window.showErrorMessage('Formatting failed:\n'+stderr);
                 return resolve(null);
             });
 
-            this.w = p.stdin
+            this.stdin = p.stdin
             var stdinStream = new stream.Readable();
             stdinStream.push(document.getText());
             stdinStream.push(null);
-            stdinStream.pipe(this.w)
+            stdinStream.pipe(this.stdin)
         });
     }
 }
