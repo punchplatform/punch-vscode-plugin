@@ -4,6 +4,7 @@
 	"description": "Punchlang Assit Code",
 	"publisher": "Punchplatform",
 	"version": "0.0.1",
+	"repository": { "type": "git", "url": "https://gitlab.thalesdigital.io/punch/parsers/punch-visualcode-plugin"},
 	"engines": {
 		"vscode": "^1.69.0"
 	},
