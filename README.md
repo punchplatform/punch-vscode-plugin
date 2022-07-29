@@ -13,11 +13,24 @@ Provide punchlang code assistance to visual code editor.
    npm run vscode:prepublish
    ```
 
-2.  You may need to reopen your VSCode
+2. You may need to reopen your VSCode
 
 3. Extension is activated when you first access a Punch file
 
+## Update
 
+1. Update the extensiona
+   
+   ```bash
+   cd $HOME/.vscode/extensions/
+   git pull
+   npm install
+   npm run vscode:prepublish
+   ```
+
+2. You may need to reopen your VSCode
+
+3. Extension is activated when you first access a Punch file
 
 ## Prerequisites
 
@@ -26,8 +39,6 @@ Provide punchlang code assistance to visual code editor.
 - nodejs
 
 - Python = 3.6.8 ([Properly install Python using Pyenv](https://gitlab.thalesdigital.io/punch/product/punch/-/blob/8.0/documentation/docs/Common/Contribution_Guide/Developper/Setup/Setup_Python.md))
-
-
 
 ## Features
 
@@ -38,8 +49,6 @@ Provide punchlang code assistance to visual code editor.
 - Snippets for Java 
 
 - Punch file formatter
-
-
 
 ## List Snippets Punch Operators
 
@@ -61,8 +70,6 @@ Provide punchlang code assistance to visual code editor.
 
 - tuple
 
-
-
 ## Extension Settings
 
 This extension contributes the following settings :
@@ -72,8 +79,6 @@ This extension contributes the following settings :
 - *Punch-formatter: Python Path* : optional custom path to python executable (requires restarting vscode)
 
 - *Punch-formatter: Formatter Path* : optional custom path to punch formatter (requires restarting vscode)
-
-
 
 ## License
 
