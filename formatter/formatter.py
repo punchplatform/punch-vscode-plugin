@@ -10,7 +10,6 @@ class Formatter:
     # indentation
     ilvl = 0
     iwidth = 0
-    statement = -1
 
     def __init__(self, indentwidth):
         self.iwidth = indentwidth
@@ -33,8 +32,10 @@ class Formatter:
         if re.match(self.line_comment, line):
             return (0, self.indent() + line.strip())
 
+        # find if there " or ' in line
         string_in_line = [m for m in re.findall(r'\"|\'',line)]
 
+        # if " or ' just indent line 
         if len(string_in_line) > 0 :
             return (0, self.indent() + line.strip())
         
@@ -42,7 +43,7 @@ class Formatter:
         open_parenthesis = [m for m in re.finditer("{",line)]
         close_parenthesis = [m for m in re.finditer("}",line)]
 
-
+        # format if one or multiple { in line 
         if len(open_parenthesis) > 0 :
             result = self.indent() + line[0:open_parenthesis[0].span()[1]]
             self.ilvl +=4
@@ -51,6 +52,7 @@ class Formatter:
                 self.ilvl +=4
             return(0, result)
             
+        # format if one or multiple } in line
         if len(close_parenthesis)>0 : 
             self.ilvl -= 4
             result = self.indent() + line[0:close_parenthesis[0].span()[1]]
@@ -59,11 +61,13 @@ class Formatter:
                 result += '\n' + self.indent() + line[close_parenthesis[i].span()[1]:close_parenthesis[i+1].span()[1]].strip()
             return(0, result) 
 
+        # format if multiple ; in line 
         if len(semicolon) > 1 : 
             f = [m for m in re.findall(r'\s*for\s*\(',line)]
             if len(f) < 1 : 
                 return self.multiple_semicolon(line, semicolon)
         
+        # if no special caraters just indent
         return (0, self.indent() + line.strip())
         
 
@@ -110,15 +114,7 @@ class Formatter:
 def main():
     options = dict(startLine=1, endLine=None, indentWidth=4)
     if len(sys.argv) < 2:
-        usage = 'usage: formatter.py filename [options...]\n'
-        opt = '  OPTIONS:\n'
-        for key in options:
-            val = options[key]
-            key_type = re.match(r'\<class \'(.*)\'\>', str(type(val))).group(1)
-            key_type = key_type.replace('NoneType', 'int')
-            opt += '    --%s=%s\n' % (key, key_type)
-
-        print('%s%s' % (usage, opt), file=sys.stderr)
+        print('Missing arguments', file=sys.stderr)
 
     else:
         for arg in sys.argv[2:]:
@@ -133,9 +129,6 @@ def main():
 
         formatter = Formatter(indent)
         formatter.formatFile(sys.argv[1], start, end)
-
-# Error if { ; on same line 
-# Line with " or ' are not format
 
 
 if __name__ == '__main__':

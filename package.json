@@ -11,7 +11,8 @@
 		"Language Packs",
 		"Formatters",
 		"Snippets",
-		"Linters"
+		"Linters", 
+		"Other"
 	],
 	"activationEvents": [
 		"onCommand:punch.Punchlet",

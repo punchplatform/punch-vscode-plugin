@@ -50,7 +50,7 @@ Provide punchlang code assistance to visual code editor.
 
 - Punch file formatter
 
-- Run @Test annotation 
+- Run Test annotation 
 
 - Create Untitled Punch file
 
