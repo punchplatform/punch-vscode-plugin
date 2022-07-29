@@ -101,7 +101,7 @@
 				"punch-puncher.puncherTag": {
 					"type": "string",
 					"default": "8.0-dev",
-					"description": "tag of puncher docker images"
+					"description": "Puncher docker image tag"
 				}
 			}
 		}

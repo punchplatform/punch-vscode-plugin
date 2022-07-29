@@ -50,6 +50,26 @@ Provide punchlang code assistance to visual code editor.
 
 - Punch file formatter
 
+- Run @Test annotation 
+
+- Create Untitled Punch file
+
+## ShortCuts
+
+- `"F7"` : [@Test annotation](https://punch-1.gitbook.io/punch-doc/punchlang/overview/getting-started#the-test-annotation)
+
+- `"ctrl + shift + I"` : format document
+
+- `"ctrl + shift + P" + Format Document` : format document
+
+- `"ctrl + shift + P" + Create New Punchlet`  : open new Untitled Punch file
+
+- `"ctlr + shift + /"` : comment selected lines or current line (if no selected)
+
+**Remark :**
+
+   `"ctrl + shift + P"` command is equivalent to  `"F1"`
+
 ## List Snippets Punch Operators
 
 - cef
@@ -79,6 +99,8 @@ This extension contributes the following settings :
 - *Punch-formatter: Python Path* : optional custom path to python executable (requires restarting vscode)
 
 - *Punch-formatter: Formatter Path* : optional custom path to punch formatter (requires restarting vscode)
+
+- *Punch-puncher: Puncher Tag* : Puncher docker image tag
 
 ## License
 
