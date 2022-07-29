@@ -73,6 +73,12 @@
 				"title": "Run Puncher"
 			}
 		],
+		"keybindings": [
+            {
+                "command": "punch.Puncher",
+                "key" : "F7"
+            }
+		],
 		"configuration": {
 			"title": "punch-formatter configuration",
 			"type": "object",
