@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	context.subscriptions.push(vscode.commands.registerCommand('punch.Puncher', () => {
-			runPuncher()
+			runPuncher(vscode.window.activeTextEditor?.document.fileName)
 		})
 	)
 
