@@ -17,6 +17,15 @@
 		],
 		"description": "Public constructor"
 	},
+	"Class constructor": {
+		"prefix": "class",
+		"body": [
+			"public ${1:${TM_FILENAME_BASE}}($2) {",
+			" ",
+			"}"
+		],
+		"description": "Public constructor"
+	},
 	"trycatch": {
 		"prefix": "try_catch",
 		"body": [
