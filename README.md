@@ -40,7 +40,9 @@ Provide punchlang code assistance to visual code editor.
 
 - nodejs
 
-- Python = 3.6.8 ([Properly install Python using Pyenv](https://gitlab.thalesdigital.io/punch/product/punch/-/blob/8.0/documentation/docs/Common/Contribution_Guide/Developper/Setup/Setup_Python.md))
+- Python >= 3.6.8 ([Properly install Python using Pyenv](https://gitlab.thalesdigital.io/punch/product/punch/-/blob/8.0/documentation/docs/Common/Contribution_Guide/Developper/Setup/Setup_Python.md))
+
+- VsCode >= 1.69.2 ([Properly install VsCode](https://code.visualstudio.com/download))
 
 ## Features
 
