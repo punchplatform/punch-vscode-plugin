@@ -71,6 +71,10 @@
 				"title": "Create New Punchlet"
 			},
 			{
+				"command": "punch.ClassPunchlet",
+				"title": "Create New full Punchlet Class"
+			},
+			{
 				"command": "punch.Puncher",
 				"title": "Run Puncher"
 			}
@@ -79,6 +83,10 @@
 			{
 				"command": "punch.Punchlet",
 				"key": "F2"
+			},
+			{
+				"command": "punch.ClassPunchlet",
+				"key": "F4"
 			},
 			{
 				"command": "punch.Puncher",

@@ -22,6 +22,31 @@ export function activate(context: vscode.ExtensionContext) {
 			})
 		})
 	);
+
+	// Command Create New full Punchlet 
+	context.subscriptions.push(
+		vscode.commands.registerCommand('punch.ClassPunchlet', () => {
+			vscode.workspace.openTextDocument({
+				content: "/*\n" + 
+				"*  This is my Punchlet\n" + 
+				"*/\n" +
+				"public class myPunchlet extends Punchlet {\n\n" +
+					"\tprivate static final Logger log = LoggerFactory.getLogger(SampleFunction.class);\n" +
+					"\tprivate Config hello ;\n\n" +
+					"\tpublic void execute(Row row){\n\n" +
+					"\t}\n\n" +
+					"\t@Override\n" +
+					"\tpublic void open () {\n" +
+					"\t\tconfig = newObjectMapper().convertValue(settings, Config.class);\n" +
+					"\t}\n" +
+				"}\n"
+				,
+				language: "punch",
+			}).then(newDocument => {
+				vscode.window.showTextDocument(newDocument);
+			})
+		})
+	);
 	
 	// Command Run Puncher
 	context.subscriptions.push(vscode.commands.registerCommand('punch.Puncher', () => {
