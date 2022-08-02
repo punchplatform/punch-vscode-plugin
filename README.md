@@ -9,6 +9,7 @@ Provide punchlang code assistance to visual code editor.
    ```bash
    cd $HOME/.vscode/extensions/
    git clone https://gitlab.thalesdigital.io/punch/parsers/punch-visualcode-plugin.git
+   cd punch-visualcode-plugin
    npm install
    npm run vscode:prepublish
    ```
@@ -24,6 +25,7 @@ Provide punchlang code assistance to visual code editor.
    ```bash
    cd $HOME/.vscode/extensions/
    git pull
+   cd punch-visualcode-plugin
    npm install
    npm run vscode:prepublish
    ```
