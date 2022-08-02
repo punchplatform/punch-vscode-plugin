@@ -77,6 +77,10 @@
 		],
 		"keybindings": [
 			{
+				"command": "punch.Punchlet",
+				"key": "F2"
+			},
+			{
 				"command": "punch.Puncher",
 				"key": "F7"
 			}

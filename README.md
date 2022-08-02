@@ -64,6 +64,8 @@ Provide punchlang code assistance to visual code editor.
 
 - `"F7"` : [@Test annotation](https://punch-1.gitbook.io/punch-doc/punchlang/overview/getting-started#the-test-annotation)
 
+- `"F2"` : Create Untitled Punch file
+
 - `"ctrl + shift + I"` : format document
 
 - `"ctrl + shift + P" + Format Document` : format document
