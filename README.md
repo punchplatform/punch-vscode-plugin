@@ -113,7 +113,3 @@ This extension contributes the following settings :
 - *Punch-formatter: Formatter Path* : optional custom path to punch formatter (requires restarting vscode)
 
 - *Punch-puncher: Puncher Tag* : Puncher docker image tag
-
-## License
-
-All PunchPlatform software, documentation, resources are Copyright (c) Thales Services SAS, France 2015-2021. All rights reserved
