@@ -58,7 +58,9 @@ class PunchFormatter {
             var stdinStream = new stream.Readable();
             stdinStream.push(document.getText());
             stdinStream.push(null);
-            stdinStream.pipe(this.stdin)
+            stdinStream.pipe(this.stdin);
+            let message = "Document " + vscode.window.activeTextEditor?.document.fileName + " has been formatting"
+            vscode.window.showInformationMessage(message);
         });
     }
 }
