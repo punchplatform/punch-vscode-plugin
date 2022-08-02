@@ -59,7 +59,7 @@ class PunchFormatter {
             stdinStream.push(document.getText());
             stdinStream.push(null);
             stdinStream.pipe(this.stdin);
-            let message = "Document " + vscode.window.activeTextEditor?.document.fileName + " has been formatting"
+            let message = "Document " + vscode.window.activeTextEditor?.document.fileName + " has been formatted"
             vscode.window.showInformationMessage(message);
         });
     }
