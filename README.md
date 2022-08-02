@@ -60,11 +60,15 @@ Provide punchlang code assistance to visual code editor.
 
 - Create Untitled Punch file
 
+- Create Untitled Punch class file
+
 ## ShortCuts
 
 - `"F7"` : [@Test annotation](https://punch-1.gitbook.io/punch-doc/punchlang/overview/getting-started#the-test-annotation)
 
 - `"F2"` : Create Untitled Punch file
+
+- `"F4"` : Create Untitled Punch class file
 
 - `"ctrl + shift + I"` : format document
 
