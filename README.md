@@ -44,6 +44,8 @@ Provide punchlang code assistance to visual code editor.
 
 - VsCode >= 1.69.2 ([Properly install VsCode](https://code.visualstudio.com/download))
 
+- Remove all settings already assign to punch files (File/Preferences/Settings)
+
 ## Features
 
 - Syntax Highlight
