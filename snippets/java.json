@@ -17,10 +17,10 @@
 		],
 		"description": "Public constructor"
 	},
-	"Class constructor": {
-		"prefix": "class",
+	"public_class": {
+		"prefix": "public_class",
 		"body": [
-			"public ${1:${TM_FILENAME_BASE}}($2) {",
+			"public class ${1:${TM_FILENAME_BASE}}($2) {",
 			" ",
 			"}"
 		],
