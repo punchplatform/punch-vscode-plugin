@@ -1,0 +1,54 @@
+# -----------------------------------------------------------------------------------
+# GLOBAL CONFIGURATION
+# -----------------------------------------------------------------------------------
+
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  GIT_CLEAN_FLAGS: -ffdx -e .build/
+  TZ: "Europe/Paris"
+  # for helm download
+  VERIFY_CHECKSUM: "false"
+  CLUSTER_NAME: punchplatform-${CI_PIPELINE_ID}
+cache: {}
+
+services:
+  - docker:19.03.13-dind
+
+stages:
+  - build
+  - sync-repo
+  
+# -----------------------------------------------------------------------------------
+# JOBS
+# -----------------------------------------------------------------------------------
+
+###########
+## MAKE ##
+###########
+
+Build plugin:
+  image: node:16.19.0
+  stage: build
+  retry: 1
+  tags:
+    - sixdt-runner-punch
+  before_script:
+    - npm install -g @vscode/vsce
+  script:
+    - npm install
+    - vsce package
+
+Sync Github:
+  image: alpine:3.15
+  stage: sync-repo
+  retry: 1
+  tags: 
+    - sixdt-runner-punch
+  before_script:
+    - apk update
+    - apk add git
+  script:
+    - git remote add github https://${PUNCH_GITHUB_USER}:${PUNCH_GITHUB_TOKEN}@github.com/punchplatform/punch-vscode-plugin.git || true
+    - git push github HEAD:main 
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
