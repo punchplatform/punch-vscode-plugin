@@ -4,45 +4,31 @@ Provide punchlang code assistance to visual code editor.
 
 ## Quick Start
 
-1. Intall the extension
+1. Clone this repo
+2. Build plugin
    
-   ```bash
-   cd $HOME/.vscode/extensions/
-   git clone https://gitlab.thalesdigital.io/punch/parsers/punch-visualcode-plugin.git
-   cd punch-visualcode-plugin
-   npm install
-   npm run vscode:prepublish
-   ```
+```sh
+npm install -g @vscode/vsce
+npm install
+vsce package
+```
+3. Install plugin
+```sh
+code --install-extension punch-visualcode-plugin-1.1.0.vsix
+code --list-extension
+```
 
-2. You may need to reopen your VSCode
-
-3. Extension is activated when you first access a Punch file
-
-## Update
-
-1. Update the extensiona
-   
-   ```bash
-   cd $HOME/.vscode/extensions/
-   git pull
-   cd punch-visualcode-plugin
-   npm install
-   npm run vscode:prepublish
-   ```
-
-2. You may need to reopen your VSCode
+2. Reopen your VSCode
 
 3. Extension is activated when you first access a Punch file
 
 ## Prerequisites
 
-- npm 
-
-- nodejs
+- NodeJS >= v16.14.0 & npm >= 8.5.0 ([Properly install NodeJS & npm through nvm](https://github.com/nvm-sh/nvm))
 
 - Python >= 3.6.8 ([Properly install Python using Pyenv](https://gitlab.thalesdigital.io/punch/product/punch/-/blob/8.0/documentation/docs/Common/Contribution_Guide/Developper/Setup/Setup_Python.md))
 
-- VsCode >= 1.69.2 ([Properly install VsCode](https://code.visualstudio.com/download))
+- VSCode >= 1.74.0 ([Properly install VsCode](https://code.visualstudio.com/download))
 
 - Remove all settings already assign to punch files (File/Preferences/Settings)
 
