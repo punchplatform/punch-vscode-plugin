@@ -1,4 +1,4 @@
-# Welcome to punch-visualcode-plugin
+# Welcome to punch-vscode-plugin
 
 Provide punchlang code assistance to visual code editor.
 
@@ -14,7 +14,7 @@ vsce package
 ```
 3. Install plugin
 ```sh
-code --install-extension punch-visualcode-plugin-1.1.0.vsix
+code --install-extension punch-vscode-plugin-1.1.0.vsix
 code --list-extension
 ```
 

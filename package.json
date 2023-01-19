@@ -1,10 +1,10 @@
 {
-	"name": "punch-visualcode-plugin",
+	"name": "punch-vscode-plugin",
 	"displayName": "Punchlang",
 	"description": "Punchlang Assist Code",
 	"publisher": "Punchplatform",
 	"version": "1.1.0",
-	"repository": { "type": "git", "url": "https://gitlab.thalesdigital.io/punch/parsers/punch-visualcode-plugin"},
+	"repository": { "type": "git", "url": "https://github.com/punchplatform/punch-vscode-plugin.git"},
 	"engines": {
 		"vscode": "^1.74.0"
 	},
